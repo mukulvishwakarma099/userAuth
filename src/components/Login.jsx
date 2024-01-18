@@ -1,11 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { loginUser } from "../features/auth/authLogin";
 
 const Login = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const [user, setUser] = useState({
     username: "",
@@ -15,7 +14,6 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch(loginUser(user));
-    navigate("/user");
   };
   return (
     <div className="h-screen w-screen bg-slate-500 flex items-center justify-center">
